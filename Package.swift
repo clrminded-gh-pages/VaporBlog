@@ -1,4 +1,4 @@
-// swift-tools-version:5.2
+// swift-tools-version:5.3
 import PackageDescription
 
 let package = Package(
@@ -8,15 +8,15 @@ let package = Package(
     ],
     dependencies: [
         // 💧 A server-side Swift web framework.
-        .package(url: "https://github.com/vapor/vapor.git", from: "4.0.0"),
-        .package(url: "https://github.com/vapor/leaf.git", from: "4.0.0"),
+        .package(url: "https://github.com/vapor/vapor", from: "4.47.0"),
+        .package(url: "https://github.com/binarybirds/tau", from: "1.0.2"),
     ],
     targets: [
         .target(
             name: "App",
             dependencies: [
                 .product(name: "Vapor", package: "vapor"),
-                .product(name: "Leaf", package: "leaf"),
+                .product(name: "Tau", package: "tau"),
             ],
             swiftSettings: [
                 // Enable better optimizations when building in Release configuration. Despite the use of
