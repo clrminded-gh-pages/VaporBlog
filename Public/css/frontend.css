@@ -1,4 +1,4 @@
-// these settings are just for layout, color options below
+
 * {see
     margin: 0;
     padding: 0;
@@ -59,7 +59,7 @@ main {
 }
 
 
-// These are media blocks to allow responsive design
+
 @media (max-width: 599px) {}
 @media (min-width: 600px) {}
 @media (min-width: 900px) {}
@@ -67,7 +67,6 @@ main {
 @media (min-width: 1800px) {}
 
 
-// This is the light color options
 body {
     background: #fff;
     color: #222;
@@ -92,7 +91,7 @@ header h1 {
 }
 
 
-// This is the dark theme colors
+
 @media (prefers-color-scheme: dark) {
     body {
         background: #222;
