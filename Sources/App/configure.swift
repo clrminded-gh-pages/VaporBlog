@@ -27,5 +27,8 @@ public func configure(_ app: Application) throws {
     app.views.use(.tau)
     
     // register routes
-    try routes(app)
+    // try routes(app)
+    
+    let router = FrontendRouter()
+    try router.boot(routes: app.routes)
 }
