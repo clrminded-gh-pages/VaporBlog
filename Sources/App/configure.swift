@@ -8,6 +8,8 @@ public func configure(_ app: Application) throws {
     
     
     // setup custom template location
+    let templatesFolderName = "Templates"
+        app.directory.viewsDirectory = app.directory.resourcesDirectory + templatesFolderName + "/"
     let detected = TemplateEngine.rootDirectory ?? app.directory.viewsDirectory
     TemplateEngine.rootDirectory = detected
     

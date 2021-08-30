@@ -1,11 +1,11 @@
 import Vapor
 import Tau
 
-struct FrontEndController {
+struct FrontendController {
     func homeView(req: Request) throws -> EventLoopFuture<View> {
-    return req.tau.render(template: "index", context: [
-        "title": "myPage -Home",
-        "body": "Hi there,",
+    return req.tau.render(template: "home", context: [
+        "title": "myPage - Home",
+        "header": "Hi there,",
         "message": "welcome to my awesome page!"
         ])
     }

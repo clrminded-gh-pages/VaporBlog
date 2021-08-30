@@ -3,7 +3,7 @@ import Vapor
 struct FrontendRouter : RouteCollection {
     let controller = FrontendController()
     
-    func boot(routes: RouteBuilder) throws {
+    func boot(routes: RoutesBuilder) throws {
         routes.get(use: controller.homeView)
     }
 }
