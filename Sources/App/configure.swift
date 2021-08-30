@@ -7,6 +7,10 @@ public func configure(_ app: Application) throws {
     app.middleware.use(FileMiddleware(publicDirectory: app.directory.publicDirectory))
     
     
+    /// extend paths to always contain a trailing slash
+    app.middleware.use(ExtendPathMiddleware())
+    
+    
     // setup custom template location
     let templatesFolderName = "Templates"
         app.directory.viewsDirectory = app.directory.resourcesDirectory + templatesFolderName + "/"
@@ -28,9 +32,14 @@ public func configure(_ app: Application) throws {
     // Use Tau as template engine
     app.views.use(.tau)
     
-    // register routes
-    // try routes(app)
     
-    let router = FrontendRouter()
-    try router.boot(routes: app.routes)
+    /// setup module routes
+    let routers: [RouteCollection] = [
+        FrontendRouter(),
+        BlogRouter(),
+    ]
+        
+    for router in routers {
+        try router.boot(routes: app.routes)
+    }
 }

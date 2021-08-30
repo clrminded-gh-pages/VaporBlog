@@ -10,6 +10,7 @@ let package = Package(
         // 💧 A server-side Swift web framework.
         .package(url: "https://github.com/vapor/vapor", from: "4.47.0"),
         .package(url: "https://github.com/binarybirds/tau", from: "1.0.2"),
+        .package(url: "https://github.com/lukaskubanek/LoremSwiftum", from: "2.2.1"),
     ],
     targets: [
         .target(
@@ -17,6 +18,7 @@ let package = Package(
             dependencies: [
                 .product(name: "Vapor", package: "vapor"),
                 .product(name: "Tau", package: "tau"),
+                .product(name: "LoremSwiftum", package: "LoremSwiftum"),
             ],
             swiftSettings: [
                 // Enable better optimizations when building in Release configuration. Despite the use of
