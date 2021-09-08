@@ -41,15 +41,13 @@ app.middleware.use(FileMiddleware(publicDirectory: app.directory.publicDirectory
     // Use Tau as template engine
     app.views.use(.tau)
     
-    
-    /// setup module routes
-    let routers: [RouteCollection] = [
-        FrontendRouter(),
-        BlogRouter(),
+     /// setup modules
+    let modules: [ModuleInterface] = [
+        FrontendModule(),
+        BlogModule(),
     ]
-        
-    for router in routers {
-        try router.boot(routes: app.routes)
+    for module in modules {
+        try module.boot(app)
     }
     
     /// use automatic database migration
